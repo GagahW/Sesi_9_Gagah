@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-14T08:32:05.306Z",
+    "end": "2025-04-14T08:32:09.255Z",
+    "duration": 3949,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "331e5e50-54ff-459d-b691-deb9bc66bc3c",
+      "title": "",
+      "fullFile": "I:\\VS\\Sesi_9_Gagah\\tests\\sesi-9\\test_sauce.js",
+      "file": "\\tests\\sesi-9\\test_sauce.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7af6f606-4c9b-4b59-9861-4fe070d84fae",
+          "title": "Test Sesi 9",
+          "fullFile": "I:\\VS\\Sesi_9_Gagah\\tests\\sesi-9\\test_sauce.js",
+          "file": "\\tests\\sesi-9\\test_sauce.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visit SauceDemo dan Login",
+              "fullTitle": "Test Sesi 9 Visit SauceDemo dan Login",
+              "timedOut": false,
+              "duration": 2236,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder ().forBrowser('chrome').build();\n\nawait driver.get('https://www.saucedemo.com');\nconst title = await driver.getTitle()\nassert.strictEqual(title, 'Swag Labs');\nlet inputUsername = await driver.findElement(By.css('[data-test=\"username\"]'))\nlet inpuPassword = await driver.findElement(By.xpath('//*[@data-test=\"password\"]'))\nlet buttonLogin = await driver.findElement(By.className('submit-button btn_action'))\nawait inputUsername.sendKeys('standard_user')\nawait inpuPassword.sendKeys('secret_sauce')\nawait buttonLogin.click()\nlet textAppLogo = await driver.findElement(By.className('app_logo'))\nlet logotext = await textAppLogo.getText()\nassert.strictEqual(logotext, 'Swag Labs')\nawait driver.quit();",
+              "err": {},
+              "uuid": "53709a7f-cc94-426a-a6b3-d8b2f3443638",
+              "parentUUID": "7af6f606-4c9b-4b59-9861-4fe070d84fae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cek Produk Filter Z-A",
+              "fullTitle": "Test Sesi 9 Cek Produk Filter Z-A",
+              "timedOut": false,
+              "duration": 1704,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder ().forBrowser('chrome').build();\n\nawait driver.get('https://www.saucedemo.com');\nconst title = await driver.getTitle()\nassert.strictEqual(title, 'Swag Labs');\nlet inputUsername = await driver.findElement(By.css('[data-test=\"username\"]'))\nlet inpuPassword = await driver.findElement(By.xpath('//*[@data-test=\"password\"]'))\nlet buttonLogin = await driver.findElement(By.className('submit-button btn_action'))\nawait inputUsername.sendKeys('standard_user')\nawait inpuPassword.sendKeys('secret_sauce')\nawait buttonLogin.click()\nlet textAppLogo = await driver.findElement(By.className('app_logo'))\nlet logotext = await textAppLogo.getText()\nassert.strictEqual(logotext, 'Swag Labs')\nlet logoSortAZ = await driver.wait(\n    until.elementLocated(By.xpath('//*[@data-test=\"product-sort-container\"]')),\n    10000\n);\nawait logoSortAZ.isDisplayed()\nlet buttonSort = await driver.findElement(By.xpath('//*[@data-test=\"product-sort-container\"]'))\nlet buttonZA = await driver.findElement(By.xpath('//*[@id=\"header_container\"]/div[2]/div/span/select/option[2]'))\nawait buttonSort.click()\nawait buttonZA.click()\nlet logoSortZA = await driver.wait(\n    until.elementLocated(By.xpath('//*[@id=\"header_container\"]/div[2]/div/span/select/option[2]')),\n    10000\n);\nawait logoSortZA.isDisplayed()\nawait driver.quit();",
+              "err": {},
+              "uuid": "6261a79b-ee18-482a-aee5-c67b15919b2b",
+              "parentUUID": "7af6f606-4c9b-4b59-9861-4fe070d84fae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "53709a7f-cc94-426a-a6b3-d8b2f3443638",
+            "6261a79b-ee18-482a-aee5-c67b15919b2b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3940,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
