@@ -1,7 +1,8 @@
-const { Builder, By, until } = require('selenium-webdriver');
-const assert = require('assert');
+import { Builder, By, until } from 'selenium-webdriver';
+import assert from 'assert';
+import page_login from '../../pages/page_login.js';
 
-describe('Test Sesi 10 with Hooks', function () {
+describe('Test Sesi 11', function () {
     let driver;
 
     // Hook: Setup before each test
@@ -12,9 +13,9 @@ describe('Test Sesi 10 with Hooks', function () {
         const title = await driver.getTitle();
         assert.strictEqual(title, 'Swag Labs');
 
-        let inputUsername = await driver.findElement(By.css('[data-test="username"]'));
-        let inputPassword = await driver.findElement(By.css('[data-test="password"]'));
-        let buttonLogin = await driver.findElement(By.css('[data-test="login-button"]'));
+        let inputUsername = await driver.findElement(page_login.inputUsername);
+        let inputPassword = await driver.findElement(page_login.inputPassword);
+        let buttonLogin = await driver.findElement(page_login.buttonLogin);
 
         await inputUsername.sendKeys('standard_user');
         await inputPassword.sendKeys('secret_sauce');

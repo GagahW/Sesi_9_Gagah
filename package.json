@@ -2,8 +2,9 @@
     "name": "selenium-mocha-digital-skola",
     "version": "1.0.0",
     "description": "Selenium WebDriver tests using Mocha with Mochawesome reports",
+    "type": "module",
     "scripts": {
-      "test": "mocha tests/sesi-9/test_sauce.js --recursive --timeout 60000",
+      "test": "mocha tests/sesi-11/test_sauce.js --recursive --timeout 60000",
       "test-parallel": "mocha tests/sesi-9/test_sauce.js --parallel --recursive --timeout 60000",
       "test-pertama": "mocha tests/sesi-9/test_sauce.js --grep 'Pertama' --recursive --timeout 60000",
       "jalanin-mochawesome": "mocha tests/sesi-9/test_sauce.js --recursive --timeout 60000 --reporter mochawesome",
